@@ -1,0 +1,127 @@
+{% extends 'Home/base.html' %}
+{% block title %}Governing Body | Ahsania Mission Medical College{% endblock title %}
+{% block page_name %}Governing Body{% endblock page_name %}
+{% load static %}
+{% block content %}
+
+    {% load home_extras %}
+
+      <!--A Meeting of Minds-->
+      <section class="section section-xl bg-default" style="padding-top: 25px;">
+
+        <div class="container">
+          <div class="row row-50">
+            <div class="col-lg-12 order-lg-1 text-lg-start">
+              <div class="inset-lg-right-30">
+                <h3 class="fw-bold">GOVERNING BODY</h3>
+                    <div class="offset-top-30 offset-sm-top-60">
+                  <p>As per the instruction & approval of the Ministry of Health & Family Welfare
+                        and Dhaka University, a 15 member Governing Body has been formed
+                        with its <strong>Chairman Mr. Kazi Rafiqul Alam, also the President of DAM &
+                        Chairman of AMCGH Governing Body</strong>. The other members of the
+                        committee are as follows:
+                       </p>
+                </div>
+              </div>
+            </div>
+          </div>
+                    <div class="row row-50 text-md-start offset-top-60">
+            <div class="col-md-12 col-xl-4">
+            <h4 class="fw-bold">Chairman</h4>
+                {% for instance1 in governing_body_1 %}
+              <div class="unit unit-sm flex-column flex-md-row unit-spacing-lg">
+                <div class="unit-left"><img class="img-responsive d-inline-block img-rounded" src="{{ instance1.member_image.url }}" width="110" height="110" alt=""></div>
+                <div class="unit-body">
+                  <h6 class="fw-bold text-primary">{{ instance1.member_name }}</h6>
+                  <div class="offset-sm-top-30">
+                    <ul class="list list-unstyled">
+                      <li><span class="text-middle text-gray" style="font-size: 24px; line-height: 24px"></span><a class="d-inline-block text-black inset-left-10" href="tel:#"></a></li>
+                      <li><span class="text-middle text-gray" style="font-size: 24px; line-height: 24px"></span><a class="d-inline-block inset-left-10" href="mailto:info@demolink.org"></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            <div class="offset-top-20">
+                <p>{{ instance1.member_details }}</p>
+              </div>
+            {% endfor %}
+            </div>
+                    </div>
+            <div class="row row-50 text-md-start offset-top-60">
+                        <h4 class="fw-bold">Members</h4>
+ {% for instance2 in governing_body_2 %}
+            <div class="col-md-4 col-xl-4">
+
+              <div class="unit unit-sm flex-column flex-md-row unit-spacing-lg">
+                <div class="unit-left"><img class="img-responsive d-inline-block img-rounded" src="{{ instance2.member_image.url }}" width="110" height="110" alt=""></div>
+                <div class="unit-body">
+                  <h6 class="fw-bold text-primary">{{ instance2.member_name}}</h6>
+                  <div class="offset-sm-top-30">
+                    <ul class="list list-unstyled">
+                      <li><span class="text-middle text-gray" style="font-size: 24px; line-height: 24px"></span><a class="d-inline-block text-black inset-left-10" href="tel:#"></a></li>
+                      <li><span class="text-middle text-gray" style="font-size: 24px; line-height: 24px"></span><a class="d-inline-block inset-left-10" href="mailto:info@demolink.org"></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+                  <div class="offset-top-10">
+                <p>{{ instance2.member_details }}</p>
+              </div>
+
+
+            </div>
+                    {% endfor %}
+                    </div>
+                    
+                              <div class="row row-50">
+            <div class="col-lg-12 order-lg-1 text-lg-start">
+              <div class="inset-lg-right-30">
+                    <div class="offset-top-30 offset-sm-top-20">
+                  <p>The rest 4 members of the Governing Body will be selected from the 
+                        Teachers & Guardians’ representatives in due course of time.
+                        The Governing Body will formulate all Policy Matters of AMMC, while 
+                        regular administrative activities will be carried out by the concerned 
+                        employees of AMMC, AMCGH & DAM under the direct supervision of the 
+                        Principal.
+                       </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+      
+                    <style>
+                        p {
+                      font-size: 0.95em;
+                      padding: 1.5px;
+                      width: 95%;
+                      margin: 2px;
+                      text-align: justify;
+                      color: black;
+                    }
+                    
+                    .none {
+                      text-justify: none;
+                    }
+                    
+                    .auto {
+                      text-justify: auto;
+                    }
+                    
+                    .dist {
+                      text-justify: distribute;
+                    }
+                    
+                    .word {
+                      text-justify: inter-word;
+                    }
+                    
+                    .char {
+                      text-justify: inter-character;
+                    }
+                 </style>
+
+
+        {% endblock %}

@@ -1,0 +1,114 @@
+{% extends 'Home/base.html' %}
+{% block title %}News | Ahsania Mission Medical College{% endblock title %}
+{% block page_name %}News{% endblock page_name %}
+{% load static %}
+{% block content %}
+
+    {% load home_extras %}
+    <!-- Classic Breadcrumbs-->
+{#           <section class="section breadcrumb-classic context-dark">#}
+{#        <div class="container">#}
+{#          <h1>Administration</h1>#}
+{#          <div class="offset-top-10 offset-md-top-35">#}
+{#            <ul class="list-inline list-inline-lg list-inline-dashed p">#}
+{#              <li><a href="{% url 'Home:Home' %}">Home</a></li>#}
+{#              <li><a href="#">Administration</a></li>#}
+{#            </ul>#}
+{#          </div>#}
+{#        </div>#}
+{#      </section>#}
+
+      <!--A Meeting of Minds-->
+<section class="section section-xl bg-default" style="padding-top: 25px;">
+        <div class="container">
+          <div class="row row-50">
+            <div class="col-lg-4 order-lg-2 text-lg-start"><img class="img-responsive d-inline-block" src="{% static 'images/blog/events-03-420x420.jpg' %}" width="370" height="370" alt=""></div>
+            <div class="col-lg-8 order-lg-1 text-lg-start">
+              <div class="inset-lg-right-30">
+                <h2 class="fw-bold">Administration</h2>
+                <hr class="divider bg-madison divider-lg-0">
+                <div class="offset-top-30 offset-sm-top-60">
+                  <p>As per the instruction of the Ministry of Health & Family Welfare and
+Dhaka University, a 15 member Governing Body has been formed
+with its Chairman Mr. Kazi Rafiqul Alam, also the President of DAM
+& Chairman of AMCGH Governing Body. This committee also
+included representatives from Ministry of Health & Family Welfare,
+Dhaka University and other affiliated bodies.</p>
+                </div>
+                <p>The Principal of AMMC has been tipped as the Member Secretary of the Governing
+Body.</p>
+                <p>The regular administrative set up will be under the direct
+supervision of the Principal along with other full time employees of
+AMMC, AMCGH & DAM.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Fill in the Form-->
+{#      <section class="section bg-madison">#}
+{#        <div class="container">#}
+{#          <div class="row justify-content-sm-center justify-content-md-end offset-top-0">#}
+{#            <div class="col-sm-10 col-md-8 col-lg-6 section-image-aside section-image-aside-left text-md-start">#}
+{#              <div class="section-image-aside-img d-none d-md-block section-image-aside-2-img" style="background-image: url(../static/images/apply-02-948x987.jpg)"></div>#}
+{#              <div class="section-image-aside-body section-xl inset-md-left-70 inset-xl-left-100">#}
+{#                <h2 class="fw-bold text-white">Fill in the Form</h2>#}
+{#                <hr class="divider divider-md-0 bg-default">#}
+{#                <div class="offset-top-60">#}
+{#                  <form class="rd-mailform text-start" data-form-output="form-output-global" data-form-type="contact" method="post" action="../static/bat/rd-mailform.php">#}
+{#                    <div class="offset-top-17">#}
+{#                      <div class="form-wrap">#}
+{#                        <label class="form-label form-label-outside text-white" for="fill-form-name">First name</label>#}
+{#                        <input class="form-input" id="fill-form-name" type="text" name="name" data-constraints="@Required">#}
+{#                      </div>#}
+{#                    </div>#}
+{#                    <div class="offset-top-17">#}
+{#                      <div class="form-wrap">#}
+{#                        <label class="form-label form-label-outside text-white" for="fill-form-last-name">Last name</label>#}
+{#                        <input class="form-input" id="fill-form-last-name" type="text" name="last-name" data-constraints="@Required">#}
+{#                      </div>#}
+{#                    </div>#}
+{#                    <div class="offset-top-17">#}
+{#                      <div class="form-wrap">#}
+{#                        <label class="form-label form-label-outside text-white" for="fill-form-phone">Phone</label>#}
+{#                        <input class="form-input" id="fill-form-phone" type="text" name="phone" data-constraints="@Required @IsNumeric">#}
+{#                      </div>#}
+{#                    </div>#}
+{#                    <div class="offset-top-17">#}
+{#                      <div class="form-wrap">#}
+{#                        <label class="form-label form-label-outside text-white" for="fill-form-email">E-mail</label>#}
+{#                        <input class="form-input" id="fill-form-email" type="email" name="email" data-constraints="@Required @Email">#}
+{#                      </div>#}
+{#                    </div>#}
+{#                    <div class="offset-top-17">#}
+{#                      <div class="form-wrap">#}
+{#                        <label class="form-label form-label-outside" for="fill-form-department" style="color: #fff">Department</label>#}
+{#                        <select class="form-input select-filter" id="fill-form-department" data-placeholder="Law" data-minimum-results-for-search="Infinity">#}
+{#                          <option>Law</option>#}
+{#                          <option value="2">Medium</option>#}
+{#                          <option value="3">High</option>#}
+{#                        </select>#}
+{#                      </div>#}
+{#                    </div>#}
+{#                    <div class="offset-top-35">#}
+{#                      <div class="form-wrap">#}
+{#                        <!-- RD Filepicker-->#}
+{#                        <div class="rd-file-picker" id="fill-form-file">#}
+{#                          <input name="file" type="file" multiple>#}
+{#                          <div class="rd-file-picker-meta"></div>#}
+{#                          <div class="rd-file-picker-btn btn text-start"><span>Select a File</span></div>#}
+{#                        </div>#}
+{#                      </div>#}
+{#                    </div>#}
+{#                    <div class="text-center text-xl-start offset-top-30 context-dark">#}
+{#                      <button class="btn button-primary" type="submit">Apply Now</button>#}
+{#                    </div>#}
+{#                  </form>#}
+{#                </div>#}
+{#              </div>#}
+{#            </div>#}
+{#          </div>#}
+{#        </div>#}
+{#      </section>#}
+      <!-- Page Footer-->
+        {% endblock %}

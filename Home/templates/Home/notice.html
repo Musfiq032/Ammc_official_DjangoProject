@@ -1,0 +1,130 @@
+{% extends 'Home/base.html' %}
+{% block title %}Notice | Ahsania Mission Medical College{% endblock title %}
+{% block page_name %} Notice {% endblock page_name %}
+{% load static %}
+{% block content %}
+<!-- Classic Breadcrumbs-->
+      
+{#     <section class="section breadcrumb-classic context-dark">#}
+{#        <div class="container">#}
+{#          <h2>All Notice</h2>#}
+{#          <div class="offset-top-10 offset-md-top-35">#}
+{#            <ul class="list-inline list-inline-lg list-inline-dashed p">#}
+{#              <li><a href="{% url 'Home:Home' %}">Home</a></li>#}
+{#              <li><a href="#">Notice</a></li>#}
+{# #}
+{#            </ul>#}
+{#          </div>#}
+{#        </div>#}
+{#      </section>#}
+
+<section class="section section-xl bg-default" style="padding-top: 25px;">
+        <div class="container container-wide">
+          <h2 class="fw-bold">Notices</h2>
+          <hr class="divider bg-madison">
+          <div class="row row-50 offset-top-60 justify-content-sm-center">
+
+        {% for instance in notice_list %}
+            <div class="col-md-4  col-xxl-4">
+              <article class="post-event">
+                <div class="unit unit-lg flex-column flex-xl-row">
+                  <div class="unit-left">
+                    <div class="post-event-meta text-center">
+                      <div class="h3 fw-bold d-inline-block d-xl-block">{{ instance.datepublished }}</div>
+                      <p class="d-inline-block d-xl-block">{{ instance.monthpublished }}</p><span class="fw-bold d-inline-block d-xl-block inset-left-10 inset-xl-left-0">{{ instance.yearpublished }}</span>
+                    </div>
+                  </div>
+                  <div class="unit-body unit-body-bg">
+                    <div class="post-event-body text-xl-start">
+                      <h6>{{ instance.notice_title }}</h6>
+                      <ul class="list-inline list-inline-xs">
+                        <li><a href="#"><span class="icon icon-xxs mdi mdi-account-outline text-middle"></span><span class="inset-left-10 text-dark text-middle">{{ instance.author }}</span></a></li>
+                        <li><a href="{{ instance.notice_file.url }}"><span class="icon icon-xxs mdi mdi-download text-middle"></span><span class="inset-left-10 text-dark text-middle">Download</span></a></li>
+
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+              {% endfor %}
+          </div>
+                  </div>
+      <hr><hr><br><br>
+
+
+      <nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+            {% if notice_list.has_previous %}
+            <li class="page-item"><a class="page-link" href="?page=1">&laquo; First</a></li>
+            <li class="page-item disabled" > <a class="page-link" href="?page={{ notice_list.previous_page_number }}
+                    ">Previous</a></li>
+        {% endif %}
+    {% for instance in nums %}
+        <li class="page-item"> <a class="page-link" href="?page={{ forloop.counter }}">{{ forloop.counter }}</a></li>
+  {% endfor %}
+
+        {% if notice_list.has_next %}
+            <li class="page-item"><a class="page-link" href="?page={{ notice_list.next_page_number }}">Next</a></li>
+             <li class="page-item"><a class="page-link" href="?page={{ notice_list.paginator.num_pages }}
+                    ">Last &raquo;</a></li>
+        {% endif %}
+  </ul>
+</nav>
+      </section>
+
+
+
+    {% endblock %}
+
+
+
+{#<section class="section section-lg bg-default">#}
+{#        <div class="container">#}
+{#          <div class="row offset-md-top-60 justify-content-sm-center">#}
+{#            <div class="col-md-10 col-xl-8">#}
+{#              <!-- Classic Responsive Table-->#}
+{#              <table class="table table-custom table-dark-blue table-fixed" data-responsive="true">#}
+{#                <tr>#}
+{#                  <th>#</th>#}
+{#                  <th>Notice Name</th>#}
+{#                  <th>Author's Name</th>#}
+{#                  <th>Published Date</th>#}
+{#                    <th>Download</th>#}
+{#                </tr>#}
+{#                  {% for instance in notice %}#}
+{#                <tr>#}
+{#                  <td>{{ instance.id }}</td>#}
+{#                  <td>{{ instance.notice_title }}</td>#}
+{#                  <td>{{ instance.author }}</td>#}
+{#                  <td>{{instance.published_date}}</td>#}
+{#                    <td><a class="underline" onclick="window.open('{{ instance.notice_file.url }}','_blank');" ><i class="fa" aria-hidden="True"></i>Download</a></td>#}
+{#                </tr>#}
+{#                  {% endfor %}#}
+{##}
+{#              </table>#}
+{#            </div>#}
+{#          </div>#}
+{#        </div>#}
+{#      </section>#}
+
+
+   <div class="offset-top-60 text-lg-start">#}
+{#                <!--Bootstrap Pagination-->#}
+{#                <nav aria-label="Page navigation">#}
+{#                  <ul class="pagination pagination-custom justify-content-center">#}
+{#                      {% if notice_list.has_previous %}#}
+{#                          <li class="page-item"><a href="?page=1">&laquo First</a></li>#}
+{#                           <a href="?page={{ notice_list.previous_page_number }}">Previous</a>#}
+{##}
+{#                      {% endif %}#}
+{#                      Page {{ notice_list.number }} of {{ notice_list.paginator.num_page }}#}
+{#                    {% if notice_list.has_next %}#}
+{#                        <a href="?page={{ notice_list.next_page_number }}">Next</a>#}
+{#                        <a href="?page={{ notice_list.paginator.num_pages }}">Last</a>#}
+{##}
+{#                  {% endif %}#}
+{##}
+{#                  </ul>#}
+{#                </nav>#}
+{#              </div>#}

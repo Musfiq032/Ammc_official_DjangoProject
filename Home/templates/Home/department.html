@@ -1,0 +1,103 @@
+{% extends 'Home/base.html' %}
+{% block title %}Departments | Ahsania Mission Medical College{% endblock title %}
+{% load static %}
+{% block content %}
+    {% load home_extras %}
+    
+          
+{#                 <section class="section breadcrumb-classic context-dark">#}
+{#        <div class="container">#}
+{#          <h2>Departments</h2>#}
+{#          <div class="offset-top-10 offset-md-top-35">#}
+{#            <ul class="list-inline list-inline-lg list-inline-dashed p">#}
+{#              <li><a href="{% url 'Home:Home' %}">Home</a></li>#}
+{#              <li><a href="#">Department</a></li>#}
+{#              <li><a href="#">{{ departments.department_name }}</a></li>#}
+{# #}
+{# #}
+{#            </ul>#}
+{#          </div>#}
+{#        </div>#}
+{#      </section>#}
+      <!-- Classic Breadcrumbs-->
+      <!-- vertical link Tabs-->
+<section class="section section-xl bg-default" style="padding-top: 25px;">
+        <div class="container">
+          <div class="tabs-custom tabs-vertical tabs-line tabs-line-1" id="tabs-7">
+            <!--Nav tabs-->
+            <ul class="nav nav-tabs">
+              <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-7-1" data-toggle="tab">Department Details</a></li>
+            </ul>
+            <!--Tab panes-->
+            <div class="tab-content inset-lg-left-60">
+              <div class="tab-pane fade" id="tabs-7-1">
+                <h2 class="fw-bold" style="text-justify: inter-word">{{ departments.department_name}}</h2>
+                <div class="offset-lg-top-60">
+                    <p style="text-justify: inter-word;">{{ departments.department_description|safe }}</p>
+                </div>
+                <div class="offset-top-30"><img class="img-responsive d-inline-block" src="{{departments.department_image.url}}" width="770" height="480" alt=""></div>
+              </div>
+                </div>
+              </div>
+              </div>
+
+      </section>
+          <section class="section section-xl bg-catskill">
+        <div class="container">
+          <h2 class="fw-bold">Faculty members</h2>
+          <hr class="divider bg-madison">
+          <div class="row row-50 text-md-start offset-top-60">
+              {% for instance in faculty_members %}
+            <div class="col-md-6 col-xl-4">
+              <div class="unit unit-sm flex-column flex-md-row unit-spacing-lg">
+                <div class="unit-left"><img class="img-responsive d-inline-block img-rounded" src="{{ instance.faculty_member_profile_image.url }}" width="110" height="110" alt=""></div>
+                <div class="unit-body">
+                  <h6 class="fw-bold text-primary"><a href="team-member-profile.html">{{ instance.faculty_member_name }}</a></h6>
+                  <div class="offset-sm-top-30">
+                    <ul class="list list-unstyled">
+                      <li><span class="icon icon-xs mdi mdi-phone text-middle text-gray" style="font-size: 24px; line-height: 24px"></span><a class="d-inline-block text-black inset-left-10" href="tel:#">#</a></li>
+                      <li><span class="icon icon-xs mdi mdi-email-outline text-middle text-gray" style="font-size: 24px; line-height: 24px"></span><a class="d-inline-block inset-left-10" href="{{ instance.faculty_member_contact}}">{{ instance.faculty_member_contact}}</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="offset-top-20">
+                <p>{{ instance.faculty_member_designation }}</p>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+
+    <style>
+    p {
+  font-size: 1.2em;
+  padding: 2px;
+  width: 95%;
+  margin: 2px;
+  text-align: justify;
+}
+
+.none {
+  text-justify: none;
+}
+
+.auto {
+  text-justify: auto;
+}
+
+.dist {
+  text-justify: distribute;
+}
+
+.word {
+  text-justify: inter-word;
+}
+
+.char {
+  text-justify: inter-character;
+}
+    </style>
+      <!-- Page Footer-->
+{% endblock %}

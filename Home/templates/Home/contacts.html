@@ -1,0 +1,156 @@
+{% extends 'Home/base.html' %}
+{% block title %}Contact | Ahsania Mission Medical College{% endblock title %}
+{% block page_name %}Contact{% endblock page_name %}
+{% load static %}
+{% block content %}
+<!-- Classic Breadcrumbs-->
+
+      
+{#           <section class="section breadcrumb-classic context-dark">#}
+{#        <div class="container">#}
+{#          <h2>Contact Us</h2>#}
+{#          <div class="offset-top-10 offset-md-top-35">#}
+{#            <ul class="list-inline list-inline-lg list-inline-dashed p">#}
+{#              <li><a href="{% url 'Home:Home' %}">Home</a></li>#}
+{#              <li><a href="#">Contact Us</a></li>#}
+{# #}
+{#            </ul>#}
+{#          </div>#}
+{#        </div>#}
+{#      </section>#}
+      
+<section class="section section-xl bg-default" style="padding-top: 25px;">
+        <div class="container">
+          <div class="row row-50 justify-content-sm-center">
+
+            <div class="col-sm-10 col-lg-8 text-lg-start">
+
+
+              <div class="offset-top-30">
+                  {% if message_name %}
+          
+                          <h2>
+                              Thank You {{ message_name }}
+                          </h2>
+                          <p> We recieved your email and will respond shortly</p>
+            
+                  {% else %}
+                             <h2 class="fw-bold">Get in Touch</h2>
+              <hr class="divider bg-madison divider-lg-0">
+              <div class="offset-top-30 offset-md-top-60">
+                <p>You can contact us any way that is convenient for you. We are available 24/7 via fax or email. You can also use a quick contact form below or visit our office personally. We would be happy to answer your questions.</p>
+              </div>
+                <form class="rd-mailform text-start"  method="post" action="{% url 'Home:contact-us' %}">
+                    {% csrf_token %}
+                  <div class="row row-12">
+                    <div class="col-xl-12">
+                      <div class="form-wrap">
+                        <label class="form-label form-label-outside" for="contact-me-name">Full name</label>
+                        <input class="form-input" id="contact-me-name" type="text" name="name" data-constraints="@Required">
+                      </div>
+                    </div>
+                    <div class="col-xl-12">
+                      <div class="form-wrap">
+                        <label class="form-label form-label-outside" for="contact-me-email">E-mail</label>
+                        <input class="form-input" id="contact-me-email" type="email" name="email" data-constraints="@Required @Email">
+                      </div>
+                    </div>
+                      <div class="col-xl-12">
+                      <div class="form-wrap">
+                        <label class="form-label form-label-outside" for="contact-me-email">Subject</label>
+                        <input class="form-input" id="contact-me-subject" type="text" name="subject" data-constraints="@Required">
+                      </div>
+                    </div>
+                    <div class="col-xl-12">
+                      <div class="form-wrap">
+                        <label class="form-label form-label-outside" for="contact-me-message">Message</label>
+                        <textarea class="form-input" id="contact-me-message" name="message" data-constraints="@Required" style="height: 220px"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="text-center text-xl-start offset-top-20">
+                    <button class="btn button-primary" type="submit">Send Message</button>
+                  </div>
+                </form>
+                    {% endif %}
+              </div>
+             
+            </div>
+
+            <div class="col-sm-10 col-lg-4 text-start">
+              <div class="inset-lg-left-30">
+                <h6 class="fw-bold">Socials</h6>
+                <div class="hr bg-gray-light offset-top-10"></div>
+                <ul class="list-inline list-inline-xs list-inline-madison">
+                  <li><a class="icon novi-icon icon-xxs fa fa-facebook icon-circle icon-gray-light-filled" href="https://www.facebook.com/ahsaniamedicalcollege"></a></li>
+                  <li><a class="icon novi-icon icon-xxs fa fa-twitter icon-circle icon-gray-light-filled" href="#"></a></li>
+                  <li><a class="icon novi-icon icon-xxs fa fa-google icon-circle icon-gray-light-filled" href="#"></a></li>
+                  <li><a class="icon novi-icon icon-xxs fa fa-instagram icon-circle icon-gray-light-filled" href="#"></a></li>
+                </ul>
+                <div class="offset-top-30 offset-md-top-60">
+                  <h6 class="fw-bold">Phones</h6>
+                  <div>
+                    <div class="hr bg-gray-light offset-top-10"></div>
+                  </div>
+                  <div class="offset-top-15">
+                    <ul class="list list-unstyled">
+                      <li><span class="icon icon-xs text-madison mdi mdi-phone text-middle"></span><a class="text-middle inset-left-10 text-dark" href="tel:018-473-59230">018-473-59230</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="offset-top-30 offset-md-top-60">
+                  <h6 class="fw-bold">E-mail</h6>
+                  <div>
+                    <div class="hr bg-gray-light offset-top-10"></div>
+                  </div>
+                  <div class="offset-top-15">
+                    <ul class="list list-unstyled">
+                      <li><span class="icon icon-xs text-madison mdi mdi-email-outline text-middle"></span><a class="text-primary text-middle inset-left-10" href="mailto:info@demolink.org">info.ammcu@gmail.com</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="offset-top-30 offset-md-top-60">
+                  <h6 class="fw-bold">Address</h6>
+                  <div>
+                    <div class="hr bg-gray-light offset-top-10"></div>
+                  </div>
+                  <div class="offset-top-15">
+                    <div class="unit flex-row unit-spacing-xs">
+                      <div class="unit-left"><span class="icon icon-xs mdi mdi-map-marker text-madison"></span></div>
+                      <div class="unit-body">
+                        <p><a class="text-dark" href="#">Plot-03, Embankment Drive Way,Sector-10<br> Uttara Model Town, Dhaka
+</a></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="offset-top-30 offset-md-top-65">
+                  <h6 class="fw-bold">Opening Hours</h6>
+                  <div>
+                    <div class="hr bg-gray-light offset-top-10"></div>
+                  </div>
+                  <div class="offset-top-15">
+                    <div class="unit flex-row unit-spacing-xs">
+                      <div class="unit-left"><span class="icon icon-xs mdi mdi-calendar-clock text-madison"></span></div>
+                      <div class="unit-body">
+                        <div>
+                          <p>Sat-Thur: 8:00am-8:00pm</p>
+                        </div>
+                        <div>
+                          <p>Friday: Closed</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--Google Map-->
+  <section class="section">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3648.067061065876!2d90.389040714984!3d23.88724058452207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c57364f90381%3A0x732f0bd62aa23c24!2sAhsania%20Mission%20Medical%20College%2C%20Uttara!5e0!3m2!1sen!2sbd!4v1656476324235!5m2!1sen!2sbd" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </section>
+      <!-- Page Footer-->
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends 'Home/base.html' %}
+{% block title %}Job-Circular | Ahsania Mission Medical College{% endblock title %}
+{% block page_name %}Job-Circular{% endblock page_name %}
+{% load static %}
+{% block content %}
+<!-- Classic Breadcrumbs-->
+      
+{#           <section class="section breadcrumb-classic context-dark">#}
+{#        <div class="container">#}
+{#          <h2>Job Circular</h2>#}
+{#          <div class="offset-top-10 offset-md-top-35">#}
+{#            <ul class="list-inline list-inline-lg list-inline-dashed p">#}
+{#              <li><a href="{% url 'Home:Home' %}">Home</a></li>#}
+{#              <li><a href="#">Job Circular</a></li>#}
+{# #}
+{#            </ul>#}
+{#          </div>#}
+{#        </div>#}
+{#      </section>#}
+        <!-- Jobs Start -->
+    <section class="section section-xl bg-default" style="padding-top: 25px;">
+        <div class="container-xxl py-5">
+            <div class="container">
+                <h3 class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">Job Circular</h3>
+                {% if job %}
+                <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.3s">
+                            {% for instance in job %}
+                            <div class="job-item p-4 mb-4">
+                                <div class="row g-4">
+                                    <div class="col-sm-12 col-md-8 d-flex align-items-center">
+
+                                        <div class="text-start ps-4">
+                                            <h5 class="mb-3">{{ instance.circular_title}}</h5>
+                                            <span class="text-truncate me-3"><i class="fa fa-map-marker-alt text-primary me-2"></i>Dhaka, Bangladesh</span>
+                                            <span class="text-truncate me-3"><i class="far fa-clock text-primary me-2"></i>Full Time/Contractual</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+                                        <div class="d-flex mb-3">
+
+                                            <a class="btn btn-outline-success btn-sm" href="{{ instance.get_absolute_url }}">For Details</a>
+                                        </div>
+                                        <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>Date Line:
+                                            {{ instance.circular_valid_date }}</small>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+            </div>
+            {% else %}
+            <p>No Circular Found</p>
+            {% endif %}
+        </div>
+        <!-- Jobs End -->
+        </div>
+    </section>
+
+{% endblock %}

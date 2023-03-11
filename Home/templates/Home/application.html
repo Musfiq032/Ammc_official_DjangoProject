@@ -1,0 +1,149 @@
+{% extends 'Home/base.html' %}
+{% block title %}Admission Info. | Ahsania Mission Medical College{% endblock title %}
+{% block page_name %}News{% endblock page_name %}
+{% load static %}
+{% block content %}
+
+    {% load home_extras %}
+        <!-- Classic Breadcrumbs-->
+{#      <section class="section breadcrumb">#}
+{#        <div class="container">#}
+{#          <div class="offset-top-10 offset-md-top-35">#}
+{#            <ul class="list-inline list-inline-lg list-inline-dashed p">#}
+{#              <li><a href="{% url 'Home:Home' %}">Home</a></li>#}
+{#              <li>Admission Guidelines#}
+{#              </li>#}
+{#            </ul>#}
+{#          </div>#}
+{#        </div>#}
+{#      </section>#}
+
+      <!--A Meeting of Minds-->
+<section class="section section-xl bg-default" style="padding-top: 25px;">
+        <div class="container">
+          <div class="row row-50">
+            <div class="col-lg-4 order-lg-2 text-lg-start"><img class="img-responsive d-inline-block" src="{% static 'images/blog/events-03-420x420.jpg' %}" width="370" height="370" alt=""></div>
+            <div class="col-lg-8 order-lg-1 text-lg-start">
+              <div class="inset-lg-right-30">
+                <h3 class="fw-bold">Admission Guidelines</h3>
+
+                   <div class="offset-top-30" style="margin-top: 22px;">
+                  <p>Applications are to be submitted in prescribed forms obtainable
+                        from the college office. Students interested to apply for admission
+                        in MBBS Course at AMMC will have to collect hard copy of the
+                        admission form by depositing Tk. 1000/= (BDT One Thousand only)
+                        from the college premises. Thereafter while submission of the filled
+                        in admission form the students will have to submit the following
+                        documents also.</p>
+                </div>
+            <br>
+                  <ol class="list-group-numbered">
+                      <li class=" d-flex justify-content-between align-items-start application">
+                        <div class="ms-2 me-auto">
+                        <strong> Money receipt of application fee. </strong>  </div>
+
+                      </li>
+                      <li class="d-flex justify-content-between align-items-start application">
+                        <div class="ms-2 me-auto">
+                            <strong>Photocopy of S.S.C certificate & mark sheet/ equivalent
+ examination certificate & mark sheet.</strong>
+                               </div>
+
+                      </li>
+                      <li class=" d-flex justify-content-between align-items-start application">
+                        <div class="ms-2 me-auto">
+                            <strong>  Photocopy of H.S.C certificate & mark sheet/ equivalent
+ examination certificate & mark sheet.</strong>
+
+
+                        </div>
+
+                      </li> <li class=" d-flex justify-content-between align-items-start application">
+                        <div class="ms-2 me-auto">
+                            <strong>Photocopy of Testimonial from School Head Master.</strong>
+
+                        </div>
+
+                      </li>
+
+                         <li class=" d-flex justify-content-between align-items-start application">
+                        <div class="ms-2 me-auto">
+                            <strong>Photocopy of National Identity Card (NID) / Birth Certificate.</strong>
+
+                        </div>
+
+                      </li>              <li class=" d-flex justify-content-between align-items-start application">
+                        <div class="ms-2 me-auto">
+                            <strong>4 passport size & 3 stamp size recent color photographs.</strong>
+
+                        </div>
+
+                      </li>              <li class=" d-flex justify-content-between align-items-start application">
+                        <div class="ms-2 me-auto">
+                            <strong>Certificate of character from a Class I Gazetted Officer.</strong>
+
+                        </div>
+
+                      </li>              <li class=" d-flex justify-content-between align-items-start application">
+                        <div class="ms-2 me-auto">
+                            <strong>Certificate regarding financial solvency of Parents/Guardian.</strong>
+
+                        </div>
+
+                      </li>              <li class=" d-flex justify-content-between align-items-start application">
+                        <div class="ms-2 me-auto">
+                            <strong>Original copies of above documents are to be produced at the
+ time of admission.</strong>
+
+                        </div>
+
+                      </li>
+            </ol>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+              <style>
+                        p {
+                      font-size: 0.97em;
+                      padding: 1.5px;
+                      width: 95%;
+                      margin: 2px;
+                      text-align: justify;
+                      color: black;
+                    }
+                    
+                   .application{
+                         font-size: 0.97em;
+                      padding: 1.5px;
+                      width: 95%;
+                      margin: 2px;
+                      text-align: justify;
+                      color: black;
+                    }
+                    
+                    .none {
+                      text-justify: none;
+                    }
+                    
+                    .auto {
+                      text-justify: auto;
+                    }
+                    
+                    .dist {
+                      text-justify: distribute;
+                    }
+                    
+                    .word {
+                      text-justify: inter-word;
+                    }
+                    
+                    .char {
+                      text-justify: inter-character;
+                    }
+                 </style>
+      <!-- Page Footer-->
+        {% endblock %}

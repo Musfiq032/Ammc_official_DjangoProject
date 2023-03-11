@@ -1,0 +1,144 @@
+{% extends 'Home/base.html' %}
+{% block title %}News | Ahsania Mission Medical College{% endblock title %}
+{% block page_name %} News {% endblock page_name %}
+{% load static %}
+{% block content %}
+<!-- Classic Breadcrumbs-->
+{#      #}
+{#                 <section class="section breadcrumb-classic context-dark">#}
+{#        <div class="container">#}
+{#          <h1>News Details</h1>#}
+{#          <div class="offset-top-10 offset-md-top-35">#}
+{#            <ul class="list-inline list-inline-lg list-inline-dashed p">#}
+{#              <li><a href="{% url 'Home:Home' %}">Home</a></li>#}
+{#              <li><a href="{% url 'Home:all-news' %}">All News</a></li>#}
+{#                             <li>{{ object.title}}#}
+{#              </li>#}
+{#            </ul>#}
+{#          </div>#}
+{#        </div>#}
+{#      </section>#}
+      <!-- Latest news-->
+<section class="section section-xl bg-default" style="padding-top: 25px;">
+        <div class="container">
+          <div class="row row-85 justify-content-sm-center">
+            <div class="col-md-8 col-lg-8 text-lg-start">
+              <h4 class="fw-bold">
+                  {{ object.title}}
+              </h4>
+              <hr class="divider bg-madison divider-lg-0">
+              <div class="offset-lg-top-47 offset-top-20">
+                <ul class="post-news-meta list list-inline list-inline-xl">
+                  <li><span class="icon icon-xs mdi mdi-calendar-clock text-middle text-madison"></span><span class="text-middle inset-left-10 fst-italic text-black">{{ object.publish_date }}</span></li>
+                  <li><span class="icon icon-xs mdi mdi-account text-middle text-madison"></span><span class="text-middle inset-left-10 fst-italic text-primary">{{ object.author.author_name }}</span></li>
+                </ul>
+              </div>
+              <div class="offset-top-30"><img class="img-responsive" src="{{ object.news_image.url }}" width="770" height="500" alt="News_Image">
+                <div class="offset-top-30">
+                  <p>{{ object.description|safe }}</p>
+                </div>
+              </div>
+
+              <div class="offset-top-30 post-news-meta row row-30 align-items-sm-center justify-content-sm-center">
+                <div class="col-lg-6">
+                  <div class="tags-list group group-sm d-inline-block text-middle"><a class="btn btn-xs button-primary fst-italic" href="#">News</a><a class="btn btn-xs button-primary fst-italic" href="#">Colleges</a><a class="btn btn-xs button-primary fst-italic" href="#">Liberal Arts</a><a class="btn btn-xs button-primary fst-italic" href="#">University</a></div>
+                </div>
+                <div class="col-lg-6">
+                  <ul class="list-inline list-inline-xs list-inline-madison pull-md-right text-middle">
+                    <li><a class="icon icon-xxs fa fa-facebook icon-circle icon-gray-light-filled" href="#"></a></li>
+                    <li><a class="icon icon-xxs fa fa-twitter icon-circle icon-gray-light-filled" href="#"></a></li>
+                    <li><a class="icon icon-xxs fa fa-google icon-circle icon-gray-light-filled" href="#"></a></li>
+                    <li><a class="icon icon-xxs fa fa-instagram icon-circle icon-gray-light-filled" href="#"></a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="offset-top-50">
+                <h6 class="fw-bold">Author</h6>
+                <div class="text-subline"></div>
+                <div class="offset-top-30">
+                  <div class="unit unit-sm flex-column flex-md-row unit-spacing-lg">
+                    <div class="unit-left"><img class="img-responsive img-rounded d-inline-block" src="{{ object.author.author_profile_image.url }}" width="170" height="170" alt=""></div>
+                    <div class="unit-body text-md-start">
+                      <h6 class="fw-bold text-primary">{{ object.author.author_name }}</h6>
+                        <p> {{ object.author.author_details  }}</p>  </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="col-lg-4 text-start col-sm-8">
+              <aside class="inset-lg-left-30">
+                <h6 class="fw-bold">Search</h6>
+                <div class="text-subline"></div>
+                <div class="offset-top-30">
+                                  <!-- RD Search Form-->
+                                  <form class="form-search rd-search form-search-widget rd-form-inline rd-form-inline-custom" action="#" method="GET">
+                                    <div class="form-wrap">
+                                      <div class="input-group">
+                                        <input class="form-search-input  form-input" type="text" name="title_or_author" autocomplete="on" placeholder="Title"><span class="input-group-btn">
+                                          <button class="btn button-primary" type="submit"><span class="icon fa fa-search"></span></button></span>
+                                      </div>
+                                    </div>
+                                  </form>
+                </div>
+                <div class="offset-top-60">
+                  <!-- Archive-->
+                  <h6 class="fw-bold">Archive</h6>
+                  <div class="text-subline"></div>
+                  <div class="row offset-top-20">
+                    <div class="col-6">
+                      <ul class="list list-marked list-marked-primary">
+                        <li><a href="news_details.html">Jun 2021</a></li>
+                        <li><a href="news_details.html">Aug 2021</a></li>
+                        <li><a href="news_details.html">Oct 2021</a></li>
+                        <li><a href="news_details.html">Dec 2021</a></li>
+                        <li><a href="news_details.html">Feb 2018</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-6">
+                      <ul class="list list-marked list-marked-primary">
+                        <li><a href="news_details.html">Jul 2021</a></li>
+                        <li><a href="news_details.html">Sep 2021</a></li>
+                        <li><a href="news_details.html">Nov 2021</a></li>
+                        <li><a href="news_details.html">Jan 2021</a></li>
+                        <li><a href="news_details.html">Mar 2018</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="offset-top-60">
+                  <!-- Facebook standart widget-->
+                  <div>
+                    <div class="fb-root fb-widget">
+                      <div class="fb-page-responsive">
+                        <div class="fb-page" data-href="https://www.facebook.com/ahsaniamedicalcollege" data-tabs="timeline" data-height="220" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                          <div class="fb-xfbml-parse-ignore">
+                            <blockquote cite="https://www.facebook.com/ahsaniamedicalcollege"><a href="https://www.facebook.com/ahsaniamedicalcollege">Ahsania Mission Medical College</a></blockquote>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="offset-top-60">
+                  <!--Recent posts-->
+                  <h6 class="fw-bold">Recent News</h6>
+                  <div class="text-subline"></div>
+                                    {% for instance in news %}
+                  <div class="offset-top-20 text-start">
+                    <article class="widget-post">
+                      <h6 class="fw-bold text-primary"><a href="{{ instance.get_absolute_url }}">{{ instance.title }}</a></h6>
+                      <p class="text-dark">2 days ago by AMMC</p>
+                    </article>
+
+                  </div>
+                  {% endfor %}
+                </div>
+              </aside>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Page Footer-->
+{% endblock %}

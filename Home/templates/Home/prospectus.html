@@ -1,0 +1,29 @@
+{% extends 'Home/base.html' %}
+{% block title %}Prospectus | Ahsania Mission Medical College{% endblock title %}
+{% load static %}
+{% block content %}
+      
+           <section class="section breadcrumb-classic context-dark">
+        <div class="container">
+          <h2>Prospectus</h2>
+          <div class="offset-top-10 offset-md-top-35">
+            <ul class="list-inline list-inline-lg list-inline-dashed p">
+              <li><a href="{% url 'Home:Home' %}">Home</a></li>
+              <li><a href="#">Prospectus</a></li>
+ 
+            </ul>
+          </div>
+        </div>
+      </section>
+        <!-- Jobs Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <h3 class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">Prospectus</h3>
+                <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.3s">
+                <iframe src="https://drive.google.com/file/d/1MJ9xBAeBORNAzk8dfsTG_Qjmcj5kNl7M/preview" style="width:600px; height:700px;" frameborder="0"></iframe>
+            </div>
+        </div>
+        <!-- Jobs End -->
+        </div>
+
+{% endblock %}

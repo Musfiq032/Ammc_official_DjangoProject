@@ -1,0 +1,313 @@
+{% extends 'Home/base.html' %}
+{% block title %}News | Ahsania Mission Medical College{% endblock title %}
+{% block page_name %}News{% endblock page_name %}
+{% load static %}
+{% block content %}
+
+    {% load home_extras %}
+      <!-- Classic Breadcrumbs-->
+      
+{#           <section class="section breadcrumb-classic context-dark">#}
+{#        <div class="container">#}
+{#          <h1>All News</h1>#}
+{#          <div class="offset-top-10 offset-md-top-35">#}
+{#            <ul class="list-inline list-inline-lg list-inline-dashed p">#}
+{#              <li><a href="{% url 'Home:Home' %}">Home</a></li>#}
+{#              <li><a href="{% url 'Home:all-news' %}">All News</a></li>#}
+{##}
+{#            </ul>#}
+{#          </div>#}
+{#        </div>#}
+{#      </section>#}
+      
+      <div id="fb-root"></div>
+<section class="section section-xl bg-default" style="padding-top: 25px;">
+        <div class="container">
+          <div class="row row-85 justify-content-sm-center">
+            <div class="col-lg-8">
+              <div class="row row-30 text-md-start justify-content-sm-center">
+                  {% for instance in news_page_object %}
+                <div class="col-md-6">
+                  <article class="post-news"><a href="{{ instance.get_absolute_url }}"><img class="img-responsive" src="{{ instance.news_thumbnail.url }}" width="370" height="240" alt=""></a>
+                    <div class="post-news-body">
+                      <h6><a href="{{ instance.get_absolute_url }}">{{ instance.title }}</a></h6>
+                      <div class="offset-top-20">
+                        <p>              </div>
+                      <div class="post-news-meta offset-top-20"><span class="icon icon-xs mdi mdi-calendar-clock text-middle text-madison"></span><span class="text-middle inset-left-10 fst-italic text-black">{{ instance.datepublished }} {{ instance.monthpublished}} {{ instance.yearpublished }} by {{ instance.author}}</span></div>
+                    </div>
+                  </article>
+                </div>
+                  {% endfor %}
+
+              </div>
+              <div class="offset-top-60 text-lg-start">
+                <!--Bootstrap Pagination-->
+                <nav aria-label="Page navigation">
+                  <ul class="pagination pagination-custom">
+                    <li class="page-item page-item-control disabled"><a class="page-link" aria-label="Previous"><span class="icon fa fa-chevron-left" aria-hidden="true"></span></a></li>
+                    <li class="page-item active"><span class="page-link">1</span></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item page-item-control"><a class="page-link" aria-label="Next"><span class="icon fa fa-chevron-right" aria-hidden="true"></span></a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+            <!-- aside-->
+            <div class="col-lg-4 text-start col-sm-8">
+              <aside class="inset-lg-left-30">
+                <h6 class="fw-bold">Search</h6>
+                <div class="text-subline"></div>
+                <div class="offset-top-30">
+                                  <!-- RD Search Form-->
+                                  <form class="form-search rd-search form-search-widget rd-form-inline rd-form-inline-custom" action="search-results.html" method="GET">
+                                    <div class="form-wrap">
+                                      <div class="input-group">
+                                        <input class="form-search-input  form-input" type="text" name="s" autocomplete="off"><span class="input-group-btn">
+                                          <button class="btn button-primary" type="submit"><span class="icon fa fa-search"></span></button></span>
+                                      </div>
+                                    </div>
+                                  </form>
+                </div>
+                <div class="offset-top-60">
+                  <!-- Archive-->
+                  <h6 class="fw-bold">Archive</h6>
+                  <div class="text-subline"></div>
+                  <div class="row row-30 offset-top-20">
+                    <div class="col-6">
+                      <ul class="list list-marked list-marked-primary">
+                        <li><a href="../Home/templates/Home/news_details.html">Jun 2021</a></li>
+                        <li><a href="../Home/templates/Home/news_details.html">Aug 2021</a></li>
+                        <li><a href="../Home/templates/Home/news_details.html">Oct 2021</a></li>
+                        <li><a href="../Home/templates/Home/news_details.html">Dec 2021</a></li>
+                        <li><a href="../Home/templates/Home/news_details.html">Feb 2018</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-6">
+                      <ul class="list list-marked list-marked-primary">
+                        <li><a href="../Home/templates/Home/news_details.html">Jul 2021</a></li>
+                        <li><a href="../Home/templates/Home/news_details.html">Sep 2021</a></li>
+                        <li><a href="../Home/templates/Home/news_details.html">Nov 2021</a></li>
+                        <li><a href="../Home/templates/Home/news_details.html">Jan 2021</a></li>
+                        <li><a href="../Home/templates/Home/news_details.html">Mar 2018</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="offset-top-60">
+                  <!-- Flickr Feed-->
+                <div class="offset-top-60">
+                  <!-- Categories-->
+                  <h6 class="fw-bold">Categories</h6>
+                  <div class="text-subline"></div>
+                  <div class="offset-top-20">
+                    <ul class="list list-marked list-marked-primary">
+                      <li><a href="../Home/templates/Home/news_details.html">News</a></li>
+                      <li><a href="../Home/templates/Home/news_details.html">University</a></li>
+                      <li><a href="../Home/templates/Home/news_details.html">Global Education</a></li>
+                      <li><a href="../Home/templates/Home/news_details.html">Law</a></li>
+                      <li><a href="../Home/templates/Home/news_details.html">Colleges</a></li>
+                    </ul>
+                  </div>
+                </div>
+           <div class="offset-top-60">
+                  <!-- Facebook standart widget-->
+                  <div>
+                    <div class="fb-root fb-widget">
+                      <div class="fb-page-responsive">
+                        <div class="fb-page" data-href="https://www.facebook.com/ahsaniamedicalcollege" data-tabs="timeline" data-height="220" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                          <div class="fb-xfbml-parse-ignore">
+                            <blockquote cite="https://www.facebook.com/ahsaniamedicalcollege"><a href="https://www.facebook.com/ahsaniamedicalcollege">Ahsania Mission Medical College</a></blockquote>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </div>
+      </section>
+
+        <!-- Page Footer-->
+{% endblock %}
+
+{#<--   <section class="section section-xl bg-catskill">#}
+{#        <div class="container">#}
+{#          <div class="row row-85 justify-content-sm-center">#}
+{#            <div class="col-lg-8 text-start">#}
+{#              <div class="section-post-news-modern inset-xxl-left-38">#}
+{##}
+{##}
+{#            {% for instance in news_page_object %}#}
+{#                  <div class="post-news-modern">#}
+{#                  <div class="unit unit-sm flex-column flex-md-row unit-timeline unit-sm-inverse flex-md-row-reverse flex-md-row-reverse">#}
+{#                    <div class="unit-body">#}
+{#                      <article class="post-news post-news-wide"><a href="{{ instance.get_absolute_url }}"><img class="img-responsive" src="{{ instance.news_image.url }}" width="770" height="500" alt=""></a>#}
+{#                        <div class="post-news-body">#}
+{#                          <h4 class="fw-bold text-primary"><a href="{{ instance.get_absolute_url }}">{{ instance.title}}</a></h4>#}
+{#                            <div class="post-news-meta offset-top-30">#}
+{#                            <div class="tags-list group group-sm d-inline-block text-middle">#}
+{##}
+{#                            </div>#}
+{#                          </div>#}
+{#                        </div>#}
+{#                      </article>#}
+{#                    </div>#}
+{#                    <div class="unit-right text-center">#}
+{#                      <div class="unit flex-row align-items-center unit-spacing-xxs unit-sm flex-md-column-reverse">#}
+{#                        <div class="unit-left"><img class="img-responsive rounded-circle d-inline-block" src="{{instance.author.author_profile_image.url}}" width="90" height="90" alt="">#}
+{#                          <p class="text-primary">{{ instance.author.author_name }}</p>#}
+{#                        </div>#}
+{#                        <div class="unit-body text-start text-md-center">#}
+{#                          <time datetime="2021-01-01">{{ instance.publish_date }}</time>#}
+{#                        </div>#}
+{#                      </div>#}
+{#                    </div>#}
+{#                  </div>#}
+{#                </div>#}
+{#                {% empty %}#}
+{#                <div class="alert alert-success" role="alert">#}
+{#                          <h4 class="alert-heading">Nothing Found!</h4>#}
+{#                          <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>#}
+{#                          <hr>#}
+{#                          <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>#}
+{#                        </div>#}
+{#                                {% endfor %}#}
+{#              </div>#}
+{#               <hr><hr><br><br>#}
+{##}
+{#            <nav aria-label="Page navigation example">#}
+{#                  <ul class="pagination justify-content-center">#}
+{#                            {% if news_page_object.has_previous %}#}
+{#                            <li class="page-item"><a class="page-link" href="{% my_url 1 'page' request.GET.urlencode %}">&laquo; First</a></li>#}
+{#                            <li class="page-item disabled" > <a class="page-link" href="{% my_url news_page_object.previous_page_number 'page' request.GET.urlencode %}">Previous</a></li>#}
+{#                        {% endif %}#}
+{#                    {% for instance in nums %}#}
+{#                        <li class="page-item"> <a class="page-link" href="?page={{ forloop.counter }}">{{ forloop.counter }}</a></li>#}
+{#                  {% endfor %}#}
+{##}
+{#                        {% if news_page_object.has_next %}#}
+{#                            <li class="page-item"><a class="page-link" href="{% my_url news_page_object.next_page_number 'page' request.GET.urlencode %}">Next</a></li>#}
+{#                             <li class="page-item"><a class="page-link" href="{% my_url news_page_object.paginator.num_pages 'page' request.GET.urlencode %}">Last &raquo;</a></li>#}
+{#        {% endif %}#}
+{#  </ul>#}
+{#</nav>#}
+{#            </div>#}
+{#            <!-- aside-->#}
+{#            <div class="col-lg-4 text-start col-sm-8">#}
+{#              <aside class="inset-lg-left-30">#}
+{#                <h6 class="fw-bold">Search</h6>#}
+{#                <div class="text-subline"></div>#}
+{#                <div class="offset-top-30">#}
+{#                                  <!-- RD Search Form-->#}
+{#                                  <form class="form-search rd-search form-search-widget rd-form-inline rd-form-inline-custom" action="#" method="GET">#}
+{#                                    <div class="form-wrap">#}
+{#                                      <div class="input-group">#}
+{#                                        <input class="form-search-input  form-input" type="text" name="title_or_author" autocomplete="on" placeholder="Title"><span class="input-group-btn">#}
+{#                                          <button class="btn button-primary" type="submit"><span class="icon fa fa-search"></span></button></span>#}
+{#                                      </div>#}
+{#                                    </div>#}
+{#                                  </form>#}
+{#                </div>#}
+{#                <div class="offset-top-60">#}
+{#                  <!-- Archive-->#}
+{#                  <h6 class="fw-bold">Archive</h6>#}
+{#                  <div class="text-subline"></div>#}
+{#                  <div class="row offset-top-20">#}
+{#                    <div class="col-6">#}
+{#                      <ul class="list list-marked list-marked-primary">#}
+{#                        <li><a href="news_details.html">Jun 2021</a></li>#}
+{#                        <li><a href="news_details.html">Aug 2021</a></li>#}
+{#                        <li><a href="news_details.html">Oct 2021</a></li>#}
+{#                        <li><a href="news_details.html">Dec 2021</a></li>#}
+{#                        <li><a href="news_details.html">Feb 2018</a></li>#}
+{#                      </ul>#}
+{#                    </div>#}
+{#                    <div class="col-6">#}
+{#                      <ul class="list list-marked list-marked-primary">#}
+{#                        <li><a href="news_details.html">Jul 2021</a></li>#}
+{#                        <li><a href="news_details.html">Sep 2021</a></li>#}
+{#                        <li><a href="news_details.html">Nov 2021</a></li>#}
+{#                        <li><a href="news_details.html">Jan 2021</a></li>#}
+{#                        <li><a href="news_details.html">Mar 2018</a></li>#}
+{#                      </ul>#}
+{#                    </div>#}
+{#                  </div>#}
+{#                </div>#}
+{#                <div class="offset-top-60">#}
+{#                  <!-- Flickr Feed-->#}
+{#                  <h6 class="fw-bold">Gallery</h6>#}
+{#                  <div class="text-subline"></div>#}
+{#                  <div class="offset-top-20 text-start">#}
+{#                    <div class="flickr widget-flickrfeed" data-lightgallery="group"><a class="thumbnail-default" data-lightgallery="item" href="../../../static/images/aside-gallery-1-original.jpg"><img width="170" height="170" data-title="alt" src="../../../static/images/aside-gallery-1-170x170.jpg" alt=""><span class="icon fa fa-search-plus"></span></a><a class="thumbnail-default" data-lightgallery="item" href="../../../static/images/aside-gallery-2-original.jpg"><img width="170" height="170" data-title="alt" src="../../../static/images/aside-gallery-2-170x170.jpg" alt=""><span class="icon fa fa-search-plus"></span></a><a class="thumbnail-default" data-lightgallery="item" href="../../../static/images/aside-gallery-3-original.jpg"><img width="170" height="170" data-title="alt" src="../../../static/images/aside-gallery-3-170x170.jpg" alt=""><span class="icon fa fa-search-plus"></span></a><a class="thumbnail-default" data-lightgallery="item" href="../../../static/images/aside-gallery-4-original.jpg"><img width="170" height="170" data-title="alt" src="../../../static/images/aside-gallery-4-170x170.jpg" alt=""><span class="icon fa fa-search-plus"></span></a><a class="thumbnail-default" data-lightgallery="item" href="../../../static/images/aside-gallery-5-original.jpg"><img width="170" height="170" data-title="alt" src="../../../static/images/aside-gallery-5-170x170.jpg" alt=""><span class="icon fa fa-search-plus"></span></a><a class="thumbnail-default" data-lightgallery="item" href="../../../static/images/aside-gallery-6-original.jpg"><img width="170" height="170" data-title="alt" src="../../../static/images/aside-gallery-6-170x170.jpg" alt=""><span class="icon fa fa-search-plus"></span></a></div>#}
+{#                  </div>#}
+{#                </div>#}
+{#                <div class="offset-top-60">#}
+{#                  <!-- Categories-->#}
+{#                  <h6 class="fw-bold">Categories</h6>#}
+{#                  <div class="text-subline"></div>#}
+{#                  <div class="offset-top-20">#}
+{#                    <ul class="list list-marked list-marked-primary">#}
+{#                        <li><a href="{% url 'Home:all-news' %}">All</a></li>#}
+{#                          {% for instance2 in categories %}#}
+{#                        <li><a href="{% url 'Home:all-news' %}?categories={{ instance2.name }}">{{ instance2.name }}</a></li>#}
+{#                        {% endfor %}#}
+{#                   </ul>#}
+{#                  </div>#}
+{#                </div>#}
+{#                <div class="offset-top-60">#}
+{#                  <!-- Facebook standart widget-->#}
+{#                  <div>#}
+{#                    <div class="fb-root fb-widget">#}
+{#                      <div class="fb-page-responsive">#}
+{#                        <div class="fb-page" data-href="https://www.facebook.com/ahsaniamedicalcollege" data-tabs="timeline" data-height="220" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">#}
+{#                          <div class="fb-xfbml-parse-ignore">#}
+{#                            <blockquote cite="https://www.facebook.com/ahsaniamedicalcollege"><a href="https://www.facebook.com/ahsaniamedicalcollege">Ahsania Mission Medical College</a></blockquote>#}
+{#                          </div>#}
+{#                        </div>#}
+{#                      </div>#}
+{#                    </div>#}
+{#                  </div>#}
+{#                </div>#}
+{#                <div class="offset-top-60">#}
+{#                  <!--Recent posts-->#}
+{#                  <h6 class="fw-bold">Recent News</h6>#}
+{#                  <div class="text-subline"></div>#}
+{#                  <div class="offset-top-20 text-start">#}
+{#                    <article class="widget-post">#}
+{#                      <h6 class="fw-bold text-primary"><a href="news_details.html">Ways Parents and Counselors Can Help Students Earn Scholarships</a></h6>#}
+{#                      <p class="text-dark">2 days ago by Ronald Austin</p>#}
+{#                    </article>#}
+{#                    <div class="offset-top-20">#}
+{#                      <article class="widget-post">#}
+{#                        <h6 class="fw-bold text-primary"><a href="news_details.html">10 Law Schools Where the Most Accepted Students Enroll</a></h6>#}
+{#                        <p class="text-dark">2 days ago by Ronald Austin</p>#}
+{#                      </article>#}
+{#                    </div>#}
+{#                    <div class="offset-top-20">#}
+{#                      <article class="widget-post">#}
+{#                        <h6 class="fw-bold text-primary"><a href="news_details.html">Consider MBA Programs That Offer Summer Prep</a></h6>#}
+{#                        <p class="text-dark">2 days ago by Ronald Austin</p>#}
+{#                      </article>#}
+{#                    </div>#}
+{#                  </div>#}
+{#                </div>#}
+{#                <div class="offset-top-60 text-center"><a class="d-block" href="#"><img class="img-responsive d-inline-block" src="../../../static/images/blog/banner-340x500.jpg" width="340" height="500" alt=""></a></div>#}
+{#                <div class="offset-top-60">#}
+{#                  <h6 class="fw-bold">Tags</h6>#}
+{#                  <div class="text-subline"></div>#}
+{#                  <div class="offset-top-20">#}
+{#                    <div class="tags-list group group-sm d-inline-block text-middle">#}
+{#                        {% for instance2 in cat_list %}#}
+{#                        <a class="btn btn-xs button-primary fst-italic" href="news_details.html">{{ instance2.name }}</a>#}
+{#                        {% endfor %}#}
+{#                    </div>#}
+{#                  </div>#}
+{#                </div>#}
+{#              </aside>#}
+{#            </div>#}
+{#          </div>#}
+{#        </div>#}
+{#      </section>#}

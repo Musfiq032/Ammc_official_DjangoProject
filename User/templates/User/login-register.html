@@ -1,0 +1,88 @@
+{% extends 'Home/base.html' %}
+{% block title %}Log In & Register | Ahsania Mission Medical College{% endblock title %}
+{% load static %}
+{% block content %}
+      <!-- Classic Breadcrumbs-->
+      <section class="section breadcrumb-classic context-dark">
+        <div class="container">
+          <h1>Login/Register</h1>
+          <div class="offset-top-10 offset-md-top-35">
+            <ul class="list-inline list-inline-lg list-inline-dashed p">
+              <li><a href="{% url 'Home:Home' %}">Home</a></li>
+              <li><a href="#">Pages</a></li>
+              <li>Login/Register
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!--Section Login Register-->
+      <section class="section section-xl bg-default">
+        <div class="container">
+          <div class="row justify-content-sm-center section-34">
+            <div class="col-sm-8 col-md-6 col-lg-5">
+              <h2 class="fw-bold">Sign In or Sign Up</h2>
+              <hr class="divider bg-madison">
+              <div class="offset-sm-top-45 text-center">
+                <!--Bootstrap tabs-->
+                <div class="tabs-custom tabs-horizontal tabs-line" id="tabs-1">
+                  <!--Nav tabs-->
+                  <ul class="nav nav-tabs">
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-login-1" data-toggle="tab">Login</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-login-2" data-toggle="tab">Registration</a></li>
+                  </ul>
+                  <!--Tab panes-->
+                  <div class="tab-content">
+                    <div class="tab-pane fade" id="tabs-login-1">
+                      <!-- RD Mailform-->
+                      <form class="rd-mailform text-start" data-form-output="form-output-global" data-form-type="contact" method="post" action="../static/bat/rd-mailform.php">
+                        <div class="form-wrap">
+                          <label class="form-label form-label-outside" for="form-login-username">Username or e-mail:</label>
+                          <input class="form-input bg-default" id="form-login-username" type="text" name="username" data-constraints="@Required">
+                        </div>
+                        <div class="form-wrap offset-top-15">
+                          <label class="form-label form-label-outside" for="form-login-password">Password:</label>
+                          <input class="form-input bg-default" id="form-login-password" type="password" name="pass" data-constraints="@Required">
+                        </div>
+                        <div class="offset-top-20">
+                          <button class="btn button-primary d-block d-xl-inline-block" type="submit">Sign in</button><span class="inset-xl-left-20 text-middle small d-inline-block offset-top-20 offset-lg-top-0">or enter with</span>
+                          <ul class="list-inline list-inline-xs list-inline-madison d-xl-inline-block inset-xl-left-10 inset-xxl-left-20 text-middle offset-top-15 offset-lg-top-0">
+                            <li><a class="icon icon-xxs fa fa-facebook icon-circle icon-gray-light-filled" href="#"></a></li>
+                            <li><a class="icon icon-xxs fa fa-twitter icon-circle icon-gray-light-filled" href="#"></a></li>
+                            <li><a class="icon icon-xxs fa fa-google icon-circle icon-gray-light-filled" href="#"></a></li>
+                          </ul>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="tab-pane fade" id="tabs-login-2">
+                      <form class="rd-mailform text-start" data-form-output="form-output-global" data-form-type="contact" method="post" action="../static/bat/rd-mailform.php">
+                        <div class="form-wrap">
+                          <label class="form-label form-label-outside" for="form-register-username">Name:</label>
+                          <input class="form-input bg-default" id="form-register-username" type="text" name="name" data-constraints="@Required">
+                        </div>
+                        <div class="form-wrap offset-top-15">
+                          <label class="form-label form-label-outside" for="form-register-email">Email:</label>
+                          <input class="form-input bg-default" id="form-register-email" type="text" name="email" data-constraints="@Required @Email">
+                        </div>
+                        <div class="form-wrap offset-top-15">
+                          <label class="form-label form-label-outside" for="form-register-password">Password:</label>
+                          <input class="form-input bg-default" id="form-register-password" type="password" name="pass" data-constraints="@Required">
+                        </div>
+                        <div class="form-wrap offset-top-15">
+                          <label class="form-label form-label-outside" for="form-register-confirm-password">Confirm Password:</label>
+                          <input class="form-input bg-default" id="form-register-confirm-password" type="password" name="confirmpass" data-constraints="@Required">
+                        </div>
+                        <div class="offset-top-20">
+                          <button class="btn button-primary" type="submit">Register</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Page Footer-->
+{% endblock %}
