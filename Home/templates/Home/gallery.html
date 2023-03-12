@@ -5,25 +5,23 @@
 {% block content %}
 <!-- Classic Breadcrumbs-->
 
-{#      #}
-{#                 <section class="section breadcrumb-classic context-dark">#}
-{#        <div class="container">#}
-{#          <h2>Gallery</h2>#}
-{#          <div class="offset-top-10 offset-md-top-35">#}
-{#            <ul class="list-inline list-inline-lg list-inline-dashed p">#}
-{#              <li><a href="{% url 'Home:Home' %}">Home</a></li>#}
-{#              <li><a href="#">Gallery</a></li>#}
-{# #}
-{#            </ul>#}
-{#          </div>#}
-{#        </div>#}
-{#      </section>#}
+
+                 <section class="section breadcrumb-classic context-dark">
+        <div class="container">
+          <h3>Gallery</h3>
+          <div class="offset-top-10 offset-md-top-35">
+            <ul class="list-inline list-inline-lg list-inline-dashed p">
+              <li><a href="{% url 'Home:Home' %}">Home</a></li>
+              <li><a href="{% url "Home:gallery" %}">Gallery</a></li>
+
+            </ul>
+          </div>
+        </div>
+      </section>
 
       <!-- Portfolio Grid-->
-<section class="section section-xl bg-default" style="padding-top: 25px;">
+<section class="section section-lg bg-default">
         <div class="container isotope-wrap">
-          <h2>Gallery</h2>
-          <hr class="divider bg-madison">
                   <form class="form-inline">
   <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" type="search" name="year">
     <option selected>Choose Year</option>

@@ -5,23 +5,22 @@
 {% block content %}
 <!-- Classic Breadcrumbs-->
       
-{#           <section class="section breadcrumb-classic context-dark">#}
-{#        <div class="container">#}
-{#          <h2>Job Circular</h2>#}
-{#          <div class="offset-top-10 offset-md-top-35">#}
-{#            <ul class="list-inline list-inline-lg list-inline-dashed p">#}
-{#              <li><a href="{% url 'Home:Home' %}">Home</a></li>#}
-{#              <li><a href="#">Job Circular</a></li>#}
-{# #}
-{#            </ul>#}
-{#          </div>#}
-{#        </div>#}
-{#      </section>#}
+           <section class="section breadcrumb-classic context-dark">
+        <div class="container">
+          <h3>Job Circular</h3>
+          <div class="offset-top-10 offset-md-top-35">
+            <ul class="list-inline list-inline-lg list-inline-dashed p">
+              <li><a href="{% url 'Home:Home' %}">Home</a></li>
+              <li><a href="#">Job Circular</a></li>
+
+            </ul>
+          </div>
+        </div>
+      </section>
         <!-- Jobs Start -->
     <section class="section section-xl bg-default" style="padding-top: 25px;">
         <div class="container-xxl py-5">
             <div class="container">
-                <h3 class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">Job Circular</h3>
                 {% if job %}
                 <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.3s">
                             {% for instance in job %}
@@ -48,7 +47,16 @@
                             {% endfor %}
             </div>
             {% else %}
-            <p>No Circular Found</p>
+                     <div class="row row-50 justify-content-sm-center">
+            <div class="col-md-6 text-start">
+
+                <div class="offset-top-30 offset-lg-top-60">
+                  <h6 class="fw-bold">No Events Currently Available.</h6>
+                  <div class="text-subline"></div>
+                </div>
+
+              </div>
+            </div>
             {% endif %}
         </div>
         <!-- Jobs End -->

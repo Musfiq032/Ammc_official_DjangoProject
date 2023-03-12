@@ -5,23 +5,21 @@
 {% block content %}
 <!-- Classic Breadcrumbs-->
       
-{#     <section class="section breadcrumb-classic context-dark">#}
-{#        <div class="container">#}
-{#          <h2>All Notice</h2>#}
-{#          <div class="offset-top-10 offset-md-top-35">#}
-{#            <ul class="list-inline list-inline-lg list-inline-dashed p">#}
-{#              <li><a href="{% url 'Home:Home' %}">Home</a></li>#}
-{#              <li><a href="#">Notice</a></li>#}
-{# #}
-{#            </ul>#}
-{#          </div>#}
-{#        </div>#}
-{#      </section>#}
+     <section class="section breadcrumb-classic context-dark">
+        <div class="container">
+          <h3>Notice</h3>
+          <div class="offset-top-10 offset-md-top-35">
+            <ul class="list-inline list-inline-lg list-inline-dashed p">
+              <li><a href="{% url 'Home:Home' %}">Home</a></li>
+              <li><a href="{% url 'Home:notice' %}">Notice</a></li>
 
-<section class="section section-xl bg-default" style="padding-top: 25px;">
+            </ul>
+          </div>
+        </div>
+      </section>
+
+<section class="section section-lg-30 bg-default">
         <div class="container container-wide">
-          <h2 class="fw-bold">Notices</h2>
-          <hr class="divider bg-madison">
           <div class="row row-50 offset-top-60 justify-content-sm-center">
 
         {% for instance in notice_list %}
